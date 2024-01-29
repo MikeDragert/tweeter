@@ -1,0 +1,38 @@
+nav {
+  
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  position:fixed;
+  top: 0px;
+}
+
+.tweeter {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.write {
+  font-weight: 600;
+}
+
+.nav-bar-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 80px;
+}
+
+.nav-down-arrow {
+  color: red;
+}
