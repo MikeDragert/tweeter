@@ -13,10 +13,20 @@
   flex-direction: column;
 }
 
-.tweet-text {
-  border-color: black;
+#tweet-text {
+  margin-bottom:.25em;
+  border-style:none;
+  resize: none;
+  white-space: nowwrap;
+  height: 1.5em;
   border-bottom: solid;
+  background-color: #f4f1ec;
+  outline: none;
+  font-size: 80%;
   font-weight: 600;
+}
+
+.tweet-text {
   padding:.25em;
 }
 .new-tweet-bottom {

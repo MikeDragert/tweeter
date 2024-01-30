@@ -1,0 +1,56 @@
+.tweets {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  border:solid;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+section.tweets header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.tweets img {
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+}
+
+section.tweets header>div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.tweets section {
+  border-bottom: solid;
+  padding: 10px;
+}
+
+section.tweets footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .6em;
+  padding: 10px;
+}
+
+section.tweets header>aside {
+  color: rgba(44, 111, 187, 0.479);
+  
+}
+
+section.tweets footer i {
+  color: #4056A1;
+}
+
+section.tweets footer i:hover {
+  color:darkgoldenrod;
+}
