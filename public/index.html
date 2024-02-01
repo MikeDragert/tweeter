@@ -22,7 +22,7 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
@@ -42,45 +42,29 @@
         <img src="/images/profile-hex.png">
       </div>
       <div>
-        <h2>Your Name</h2>
+        <h2 id="header-name">Your Name</h2>
       </div>
     </header>
     <!-- Page-specific (main) content here --> 
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="http://localhost:8080/tweets/" class="new-tweet-form">
+        <div class="new-tweet-error"> 
+          <i class="fa-solid fa-triangle-exclamation"></i> 
+          <span>some error text</span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <form class="new-tweet-form" id="new-tweet-form">
           <label class="tweet-text" for="tweet-text">What are you humming about?</label>
-          <textarea id="tweet-text"></textarea>
+          <textarea id="tweet-text" name="text"></textarea>
           <div class="new-tweet-bottom">
             <button type="submit" class="new-tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <section class="tweets">
-        <article>
-          <header>
-            <div>
-              <img src="/images/profile-hex.png">
-              <div>name</div>
-            </div>
-            <aside>@dddd</aside>            
-          </header>
-          <section>
-            this is the tweet
-          </section>
-          <footer>
-            <div>
-              X days ago 
-            </div>
-            <div>
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+      <section class="tweets" id="tweets-container">
+        
       </section>
     </main>
   </body>

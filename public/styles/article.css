@@ -1,11 +1,13 @@
-.tweets {
+section.tweets {
   display:flex;
   flex-direction: column;
   width: 100%;
-  border:solid;
-  padding: 10px;
-  margin: 10px;
+}
 
+section.tweets article {
+  border:solid;
+  margin: 10px;
+  padding: 10px;
 }
 
 section.tweets header {
@@ -40,6 +42,10 @@ section.tweets footer {
   align-items: center;
   font-size: .6em;
   padding: 10px;
+}
+
+section.tweets footer div i {
+  padding: 2px;
 }
 
 section.tweets header>aside {

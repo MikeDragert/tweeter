@@ -42,14 +42,16 @@
   background-color: #4056A1;
 }
 
-/* <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="http://localhost:8080/tweets/">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section> */
+.new-tweet-error {
+  border: solid;
+  border-width: 5px;
+  width: 100%;
+  display:none;
+  justify-content: center;
+  border-color: red;
+  color: red;
+}
+
+.new-tweet-error > * {
+  padding: 2px;
+}

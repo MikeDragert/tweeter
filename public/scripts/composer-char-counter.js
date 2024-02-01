@@ -11,6 +11,6 @@ $(document).ready(function() {
     } else {
       $(this).parent().find(".counter").css({"color": ""});
     }
-    $(this).parent().find(".counter").val(140-newLength);
+    $(this).parent().find(".counter").val(140 - newLength);
   });
-})
+});
