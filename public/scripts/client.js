@@ -7,10 +7,10 @@
 const displayError = function(errorMessage) {
   $(".new-tweet-error>span").text(errorMessage);
   $(".new-tweet-error").slideDown({
-    start: function () {
+    start: function() {
       $(this).css({
         display: "flex"
-      })
+      });
     }
   });
 };
@@ -40,7 +40,7 @@ const createTweetElement = function(tweetData) {
     )
   );
 
-  let $section = $("<section>").text(content.text);
+  let $section = $("<span>").text(content.text);
   $article.append($section);
 
   let $footer = $("<footer>");
@@ -74,15 +74,15 @@ const renderTweets = function(tweets) {
   }
 };
 
-const loadTweets = function() {
+const loadTweets = function(callback) {
   $.ajax({
     url: "http://localhost:8080/tweets",
     context: document.body,
     method: "GET",
     success: function(data, textStatus, jqXHR) {
-      renderTweets(data);
+      callback(data);
     },
-    error: function(jqXHR, trextStatus, errorThrown) {
+    error: function(jqXHR, textStatus, errorThrown) {
       displayError('Problem loading tweets');
     }
   });
@@ -90,18 +90,19 @@ const loadTweets = function() {
 
 $(document).ready(function() {
   
-  loadTweets();
+  loadTweets(renderTweets);
   
   $('#new-tweet-form').on("submit", function(event) {
     event.preventDefault();
     hideError();
+    let newTweetText = $("#tweet-text").val();
 
-    if (!$("#tweet-text").val()) {
+    if (!newTweetText) {
       displayError('Nothing to submit. Try typing something 😜');
       return false;
     }
 
-    tweetLength = $("#tweet-text").val().length;
+    let tweetLength = newTweetText.length;
 
     if ((tweetLength < 1) || (tweetLength > 140)) {
       displayError('Too long!  Plz respect arbitrary limit of 140 chars.');
@@ -115,26 +116,29 @@ $(document).ready(function() {
       method: "POST",
       success: function(data, textStatus, jqXHR) {
 
-        //todo: this is working, but without a login and actual user info, it is not ideal
-        //todo: would it be better to get the saved tweet back from the server? But the server doesn't return it unless we get the whole list
-        const newTweet = createTweetElement({
-          user: {
-            avatars: $(".page-header img").attr("src"),
-            name:  $("#header-name").text(),
-            handle: "@handle"
-          },
-          content: {text: $("#tweet-text").val()},
-          created_at: (new Date())
+        //NOTE: ideally we would have the logged in user, picture, name etc, and passed those to the server
+        // but we don't!! so let's reget the server tweets so that we can show what the server created
+        // only prepend the new one that we don't have yet
+        // starting at the end and looking back for the first matching text seems to be the best way
+        loadTweets((tweets) => {
+          const currentTweetCount = $("#tweets-container>article").length;
+          const newTweetCount = tweets.length;
+          for (index = newTweetCount - 1; index >= currentTweetCount; index--) {
+            let tweetToAdd = tweets[index];
+            if (tweetToAdd.content.text === newTweetText) {
+              const newTweet = createTweetElement(tweetToAdd);
+              $('#tweets-container').prepend(newTweet);
+              break;
+            }
+          }
         });
-        $('#tweets-container').prepend(newTweet);
 
         $("#tweet-text").val("");
         $("#tweet-text").parent().find(".counter").val(140);
       },
-      error: function(jqXHR, trextStatus, errorThrown) {
+      error: function(jqXHR, textStatus, errorThrown) {
         displayError('Problem saving tweet');
       }
     });
   });
 });
-
