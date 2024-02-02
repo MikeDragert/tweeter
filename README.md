@@ -26,7 +26,7 @@ Note that there is no login feature and so personalized icons and names are not 
 
 ## Screenshots
 
-!["screenshot of starting page"]()
-!["screenshot of example tweet"]()
-!["screenshot of saved example tweet"]()
-!["screenshot of small screen layout"]()
+!["screenshot of starting page"](https://github.com/MikeDragert/tweeter/blob/master/docs/tweeter%201.png?raw=true)
+!["screenshot of example tweet"](https://github.com/MikeDragert/tweeter/blob/master/docs/tweeter%202.png?raw=true)
+!["screenshot of saved example tweet"](https://github.com/MikeDragert/tweeter/blob/master/docs/tweeter%203%20-%20tweet%20saved.png?raw=true)
+!["screenshot of small screen layout"](https://github.com/MikeDragert/tweeter/blob/master/docs/tweeter%204%20-%20thin.png?raw=true)
