@@ -7,7 +7,6 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
@@ -26,16 +25,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-
   </head>
-
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav>
       <span class="tweeter">tweeter</span>
       <div class="nav-bar-right">
         <span><span class ="write">Write</span> a new tweet</span>
-        <i class="fa-solid fa-angles-down nav-down-arrow" ></i>
+        <i class="fa-solid fa-angles-down nav-down-arrow"></i>
       </div>
     </nav>
     <section class="page-content"> 
@@ -44,16 +40,14 @@
           <img src="/images/profile-hex.png">
         </div>
         <div>
-          <h2 id="header-name">Your Name</h2>
+          <h2 id="header-name">Awesome Lighthouse Reviewer</h2>
         </div>
       </header>
-      <!-- Page-specific (main) content here --> 
       <main class="container">
         <section class="new-tweet">
-          <h2>Compose Tweet</h2>
           <div class="new-tweet-error"> 
             <i class="fa-solid fa-triangle-exclamation"></i> 
-            <span>some error text</span>
+            <span></span>
             <i class="fa-solid fa-triangle-exclamation"></i>
           </div>
           <form class="new-tweet-form" id="new-tweet-form">
@@ -66,7 +60,6 @@
           </form>
         </section>
         <section class="tweets" id="tweets-container">
-          
         </section>
       </main>
     </section>

@@ -11,6 +11,10 @@ section.tweets article {
   width: 100%;
 }
 
+section.tweets article:hover {
+  box-shadow: 0px 0px 25px rgba(5, 18, 53, 0.74); 
+}
+
 section.tweets header {
   display:flex;
   flex-direction: row;
@@ -54,7 +58,6 @@ section.tweets footer div i {
 
 section.tweets header>aside {
   color: rgba(44, 111, 187, 0.479);
-  
 }
 
 section.tweets footer i {
